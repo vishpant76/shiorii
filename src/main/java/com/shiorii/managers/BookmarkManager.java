@@ -1,11 +1,15 @@
 package com.shiorii.managers;
 
+import com.shiorii.dao.BookmarkDao;
+import com.shiorii.entities.Bookmark;
 import com.shiorii.entities.Movie;
 import com.shiorii.entities.Book;
 import com.shiorii.entities.WebLink;
 
 public class BookmarkManager {
     private static BookmarkManager instance = new BookmarkManager();
+    private static BookmarkDao dao = new BookmarkDao();
+
     private BookmarkManager(){
 
     }
@@ -52,5 +56,9 @@ public class BookmarkManager {
         webLink.setHost(host);
 
         return webLink;
+    }
+
+    public Bookmark[][] getBookmarks(){
+        return dao.getBookmarks();
     }
 }

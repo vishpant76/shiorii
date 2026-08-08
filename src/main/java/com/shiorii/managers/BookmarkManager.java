@@ -1,10 +1,7 @@
 package com.shiorii.managers;
 
 import com.shiorii.dao.BookmarkDao;
-import com.shiorii.entities.Bookmark;
-import com.shiorii.entities.Movie;
-import com.shiorii.entities.Book;
-import com.shiorii.entities.WebLink;
+import com.shiorii.entities.*;
 
 public class BookmarkManager {
     private static BookmarkManager instance = new BookmarkManager();
@@ -60,5 +57,13 @@ public class BookmarkManager {
 
     public Bookmark[][] getBookmarks(){
         return dao.getBookmarks();
+    }
+
+    public void saveUserBookmark(User user, Bookmark bookmark) {
+        UserBookmark userBookmark = new UserBookmark();
+        userBookmark.setUser(user);
+        userBookmark.setBookmark(bookmark);
+
+        dao.saveUserBookmark(userBookmark);
     }
 }

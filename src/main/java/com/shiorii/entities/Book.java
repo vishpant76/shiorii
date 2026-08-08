@@ -1,5 +1,7 @@
 package com.shiorii.entities;
 
+import com.shiorii.constants.BookGenre;
+
 import java.util.Arrays;
 
 public class Book extends Bookmark{
@@ -51,7 +53,10 @@ public class Book extends Bookmark{
 
     @Override
     public boolean isKidFriendlyEligible() {
-        return false;
+        if (genre.equals(BookGenre.PHILOSOPHY) || genre.equals(BookGenre.SELF_HELP)){
+            return false;
+        }
+        return true;
     }
 
     @Override

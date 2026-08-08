@@ -50,6 +50,11 @@ public class Book extends Bookmark{
     }
 
     @Override
+    public boolean isKidFriendlyEligible() {
+        return false;
+    }
+
+    @Override
     public String toString() {
         return "Book{" +
                 "publicationYear=" + publicationYear +
@@ -59,4 +64,5 @@ public class Book extends Bookmark{
                 ", amazonRating=" + amazonRating +
                 '}';
     }
+
 }

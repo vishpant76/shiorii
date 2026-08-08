@@ -50,6 +50,11 @@ public class Movie extends Bookmark{
     }
 
     @Override
+    public boolean isKidFriendlyEligible() {
+        return false;
+    }
+
+    @Override
     public String toString() {
         return "Movie{" +
                 "releaseYear=" + releaseYear +
@@ -59,4 +64,5 @@ public class Movie extends Bookmark{
                 ", imdbRating=" + imdbRating +
                 '}';
     }
+
 }
